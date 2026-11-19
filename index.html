@@ -507,7 +507,7 @@ footer.foot { margin-top: 36px;}
 <span><i class="sw ramp"></i>互通匝道</span>
 <span><i class="dot"></i>收费站 / 隧道配电房（CAD 拟合站位）</span>
 </div>
-<p class="view-note">站位为 CAD 拟合位置，与导航坐标偏差一般 45~200 米；惠城主线站拟合位置与导航坐标相差约 1.4 公里，该站坐标待在高德上复核。</p>
+<p class="view-note">站位为 CAD 拟合位置，与导航坐标偏差一般 45~200 米；惠城主线站原手钉点较粗略，经用户确认已改按 CAD 拟合位置（114.357723, 23.122186），站卡坐标与高德、百度导航均已同步改用该位置。</p>
 </div>
 
 <div id="overviewView" hidden>
@@ -810,7 +810,7 @@ return { done: done, total: sc.length, text: text};
 /* 坐标为高德坐标（GCJ-02），格式为经度,纬度；来源为用户提供并确认 */
 var COORDS = {
 luoyang: { lon: 114.245284, lat: 23.122584},
-huicheng: { lon: 114.371170, lat: 23.125932},
+huicheng: { lon: 114.357723, lat: 23.122186}, /* 2026-11-19：用户原手钉点 114.371170, 23.125932 较粗略，经用户确认已替换为 CAD 拟合位置 */
 boluonan: { lon: 114.277605, lat: 23.131877},
 meiyuan: { lon: 114.338292, lat: 23.129959},
 luoyangxi: { lon: 114.208039, lat: 23.134192},
@@ -1654,7 +1654,7 @@ var navBtns = pt
 return '<div class="map-pop">' +
 '<div class="nm">' + esc(mp.label) + '<span class="zone">' + esc(st.zone) + "</span></div>" +
 '<div class="rows">' + rows + "</div>" +
-(mp.warn? '<div class="warn">站位为 CAD 拟合位置，与导航坐标偏差一般 45~200 米；惠城主线站拟合位置与导航坐标相差约 1.4 公里，该站坐标待在高德上复核。</div>': "") +
+(mp.warn? '<div class="warn">站位为 CAD 拟合位置，与导航坐标偏差一般 45~200 米；惠城主线站原手钉点较粗略，经用户确认，站位、站卡坐标与导航已统一改按 CAD 拟合位置（114.357723, 23.122186）。</div>': "") +
 '<div class="btns">' +
 '<button type="button" class="plan" data-mappop-plan="' + st.id + '">▦ 平面图</button>' + navBtns +
 "</div></div>";
